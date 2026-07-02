@@ -1,231 +1,315 @@
-# Tichi Application – Manual QA Testing Project
+# Tichi QA Testing Project
 
 ## Project Overview
 
-This project involves end-to-end manual testing of the Tichi web application as part of a Quality Assurance (QA) testing assignment.
+This project was completed as part of the QA Testing assignment for the Tichi Web Application.
 
-The objective was to validate the application’s authentication flow, functional workflows, UI behavior, navigation flow, input validations, and identify defects through exploratory testing.
+The objective of this project was to perform complete manual testing of the application, identify functional defects, document test cases professionally, perform exploratory testing across multiple modules, and implement basic automation testing using Selenium.
 
-The testing process was performed using a real-world QA testing approach focusing on functionality, usability, validation checks, negative testing, and defect reporting.
-
----
-
-## Application Tested
-
-**Application Name:** Tichi Web Application  
-**Testing Date:** 01-07-2026  
-**Testing Type:** Manual Testing
+The project demonstrates practical software testing skills including test case design, bug reporting, exploratory testing, documentation, automation testing, and version control using GitHub.
 
 ---
 
-## Scope of Testing
+## Project Objectives
 
-The following modules were tested:
+The main objectives of this project were:
 
-- Login Authentication
-- Signup / Registration Flow
-- Search Functionality
-- Job Detail Navigation
-- Request Workflow
-- Profile Update Module
-- My Requests Section
-- My Posts Section
-- History Section
-- Reviews Section
-- Subscription Plans
-- Standalone Purchase Plans
-- Help & Support Section
-- FAQ Expand / Collapse Functionality
+- Perform Manual Testing on major application modules
+- Design and execute Login and Signup test cases
+- Perform Exploratory Testing on multiple application workflows
+- Identify real application bugs and document them professionally
+- Capture screenshots as testing evidence
+- Implement Selenium Automation Testing (Optional Task)
+- Organize all documentation in a professional GitHub repository
 
 ---
 
-## Testing Types Performed
+## Modules Tested
 
-### Functional Testing
+The following modules were tested during the project:
 
-Tested whether application features worked according to expected business behavior.
+### Authentication Module
 
-Examples:
+- Login Page Testing
+- Signup Page Testing
+- Logout Testing
+- Session Termination Testing
+- Invalid Credentials Validation
+- Empty Field Validation
+- Email Validation
+- Password Validation
 
-- Valid login
-- Successful profile update
-- Job search functionality
-- Navigation between modules
+### Search Module
 
----
+Tested application search functionality with multiple inputs:
 
-### Negative Testing
+- Normal keyword search
+- Empty search input
+- Special character search
+- Long text input testing
+- Sorting functionality validation
 
-Tested invalid and unexpected inputs.
+### Job Request Workflow
 
-Examples:
+- Opening job cards
+- Navigating to job detail page
+- Request button workflow
+- Profile completion requirement validation
 
-- Empty login fields
-- Invalid email format
-- Wrong password
-- Password mismatch
-- Invalid mobile number
-- Special characters in input fields
+### Profile Module
 
----
+- Profile update validation testing
+- Mandatory field validation checking
+- Save button behavior testing
 
-### Validation Testing
+### User Activity Modules
 
-Verified form validation logic.
-
-Examples:
-
-- Empty required fields
-- Password validation
-- Confirm password validation
-- Signup checkbox validation
-
----
-
-### Exploratory Testing
-
-Performed additional testing beyond initial requirements to evaluate application stability.
-
-Modules explored:
-
-- Subscription purchase workflow
-- Requests
-- Posts
+- My Requests
+- My Posts
 - History
 - Reviews
-- Help & Support
+
+### Subscription Module
+
+- Subscription page loading
+- Standalone Plan testing
+- Subscription Plan testing
+- Buy Now purchase workflow testing
+
+### Help & Support Module
+
+- Help & Support page validation
+- FAQ dropdown functionality testing
 
 ---
 
-## Test Cases Executed
+## Manual Testing Performed
 
 ### Login Test Cases
 
-- Logout functionality
-- Session termination after logout
-- Empty field validation
-- Invalid password validation
-- Invalid email validation
-- Password required validation
-- Email required validation
-- Successful login verification
+Executed test cases including:
 
-Total Login Test Cases: **10**
-
----
+- Valid Login
+- Invalid Password
+- Invalid Email
+- Invalid Credentials
+- Empty Fields Validation
+- Password Required Validation
+- Email Required Validation
+- Logout Functionality
+- Session Termination Validation
 
 ### Signup Test Cases
 
+Executed test cases including:
+
 - Empty First Name
-- Mobile number validation
-- Password strength validation
-- Confirm password mismatch
-- Checkbox validation
-- Empty form validation
-- Long input testing
-
-Total Signup Test Cases: **17**
-
----
-
-## Defects Identified
-
-### BUG001 – Profile Validation Inconsistency
-
-**Module:** Profile
-
-Issue:
-
-Application displayed validation message:
-
-"First Name, About Me, and Profile Headline are required"
-
-Even though First Name field already contained valid data.
-
-**Severity:** Medium
+- Long First Name Validation
+- Empty Mobile Number
+- Invalid Mobile Number
+- Less Than 10 Digits
+- More Than 10 Digits
+- Special Characters in Mobile Number
+- Empty Password
+- Weak Password
+- Long Password
+- Password Mismatch
+- Matching Password Validation
+- Checkbox Validation
+- Submit Empty Form Validation
 
 ---
 
-### BUG002 – Subscription Purchase Failure
+## Exploratory Testing
 
-**Module:** Subscription Plans
+A complete exploratory testing session was performed on the Tichi Application.
 
-Issue:
+Total exploratory scenarios executed:
 
-Clicking **Buy Now** on both Subscription Plans and Standalone Plans triggered popup error:
+- Search functionality testing
+- Profile workflow testing
+- Requests and Posts testing
+- History and Reviews testing
+- Subscription workflow testing
+- Help & Support testing
+
+Total exploratory test scenarios executed:
+
+**17 Test Scenarios**
+
+---
+
+## Bugs Identified
+
+During testing, real defects were discovered.
+
+### BUG001 — Profile Validation Inconsistency
+
+Description:
+
+While saving profile details, the application displayed validation message stating First Name is required even though the First Name field already contained valid data.
+
+Expected Result:
+
+Only empty fields should be shown in validation.
+
+Actual Result:
+
+System incorrectly marked First Name as required.
+
+Severity:
+
+Medium
+
+Status:
+
+Open
+
+---
+
+### BUG002 — Subscription Purchase Workflow Failure
+
+Description:
+
+When clicking Buy Now on all available subscription plans, the application displayed an error popup.
+
+Error Message:
 
 "Uh! oh! Something went wrong"
 
-Purchase workflow failed for all plans.
+Expected Result:
 
-**Severity:** Critical
+Payment or subscription purchase workflow should open successfully.
 
----
+Actual Result:
 
-## Exploratory Testing Summary
+Purchase workflow failed for every available plan.
 
-Total Modules Tested: **10+**
+Severity:
 
-Modules Verified:
+Critical
 
-- Search
-- Profile
-- Requests
-- Posts
-- History
-- Reviews
-- Subscription Plans
-- Help & Support
-- FAQ Dropdown Functionality
+Status:
+
+Open
 
 ---
 
-## Test Execution Summary
+## Automation Testing
 
-Total Test Cases Designed: **27**
+Basic Selenium Automation Testing was implemented using Python.
 
-Passed: **25**
+Automated Scenario:
 
-Failed / Defects Found: **2**
+### Invalid Login Workflow Automation
 
-Critical Bugs: **1**
+Automation Flow:
 
-Medium Severity Bugs: **1**
+1. Open Tichi Application
+2. Navigate to Sign In page
+3. Enter invalid email
+4. Click Continue button
+5. Validate login workflow response
 
 ---
 
-## Skills Applied
+## Tools & Technologies Used
 
+### Manual Testing
+
+- Functional Testing
+- Exploratory Testing
+- Validation Testing
+- Defect Identification
+
+### Documentation
+
+- Microsoft Excel
+- Test Case Documentation
+- Bug Report Documentation
+
+### Automation Testing
+
+- Python
+- Selenium WebDriver
+- Chrome Browser
+
+### Version Control
+
+- Git
+- GitHub
+
+---
+
+## Project Folder Structure
+
+```text
+Tichi-QA-Testing-Project
+│
+├── README.md
+│
+├── Testcases
+│   ├── TestCases.xlsx
+│   ├── Exploratory_Testing.xlsx
+│   └── Bug_Report.xlsx
+│
+├── Screenshots
+│   ├── Login Screenshots
+│   ├── Signup Screenshots
+│   ├── Bug Evidence Screenshots
+│   └── Automation Execution Screenshot
+│
+└── Automation
+    ├── test_login.py
+    ├── requirements.txt
+    └── README_Automation.md
+```
+
+---
+
+## Skills Demonstrated
+
+This project demonstrates practical understanding of:
+
+- Software Testing Life Cycle (STLC)
 - Manual Testing
 - Functional Testing
-- Validation Testing
 - Exploratory Testing
-- Negative Testing
-- Bug Reporting
-- UI Testing
 - Test Case Design
-- QA Documentation
+- Bug Reporting
+- Selenium Automation Testing
+- GitHub Repository Management
+- QA Documentation Standards
 
 ---
 
-## Deliverables
+## Project Status
 
-Project includes:
+Project Completion Status:
 
-- Login Test Case Documentation
-- Signup Test Case Documentation
-- Bug Report Documentation
-- Exploratory Testing Report
-- Screenshots of Defects Found
+**Completed Successfully**
+
+Coverage Achieved:
+
+- Manual Testing — Completed
+- Test Case Documentation — Completed
+- Bug Reporting — Completed
+- Exploratory Testing — Completed
+- Automation Testing — Completed
+- GitHub Documentation — Completed
+
+---
+
+## Final Outcome
+
+Successfully completed end-to-end QA testing of Tichi Web Application including manual testing, exploratory testing, bug identification, documentation, and automation testing.
+
+This project reflects real-world software testing workflow followed in QA Engineering.
 
 ---
 
-## Conclusion
+## Author
 
-The Tichi web application was tested successfully across authentication, navigation, validation, and subscription modules.
+Prasanna G
 
-The application core functionality was operational, however critical defects were identified in subscription purchase workflow and profile validation logic.
-
-This testing project demonstrates practical QA engineering workflow involving test design, execution, defect identification, and professional reporting.
-
----
+QA Testing Project Submission
